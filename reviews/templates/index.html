@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Super Copa de Cabeças</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .stars {
+            direction: rtl;
+            display: inline-flex;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 2rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .stars input:checked ~ label,
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: gold;
+        }
+
+        .rating-message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bem-vindo à página web do jogo "Super Copa de Cabeças"!</h1>
+
+    <div class="section">
+        <p>Este jogo de futebol com personagens caricatos de cabeças grandes proporciona uma experiência divertida!!</p>
+    </div>
+
+    <div class="section">
+        <h2>Objetivo do jogo:</h2>
+        <p>Fazer o maior número de gols dentro do tempo limite em uma partida 1x1, utilizando personagens com cabeças grandes e movimentação limitada.</p>
+    </div>
+
+    <div class="section">
+        <h2>Controles do Jogo:</h2>
+        <p><strong>Jogador 1</strong><br>
+        A/D: esquerda/direita<br>
+        W: pular<br>
+        Barra de espaço: chutar</p>
+
+        <p><strong>Jogador 2</strong><br>
+        Setas esquerda/direita<br>
+        Seta cima: pular<br>
+        Enter: chutar</p>
+    </div>
+
+    <div class="section">
+        <h2>Regras Básicas:</h2>
+        <ul>
+            <li>Duração: 60 segundos</li>
+            <li>Mais gols vence</li>
+            <li>Empate: morte súbita</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Configurações Extras:</h2>
+        <ul>
+            <li>Personagens Personalizados</li>
+            <li>Tempo e pontuação ajustáveis</li>
+            <li>Sistema de Placar</li>
+            <li>Poderes Surpresa</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Download do Jogo:</h2>
+        <a class="download-btn" href="/static/Super Head Cup.zip" download>📥 Baixar Jogo (.zip)</a>
+    </div>
+
+    <div class="section">
+        <h2>Avalie o jogo:</h2>
+        <form id="ratingForm">
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+            <div class="rating-message" id="ratingMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('ratingForm');
+        const message = document.getElementById('ratingMessage');
+
+        form.addEventListener('change', (e) => {
+            if (e.target.name === 'rating') {
+                message.textContent = `Você avaliou com ${e.target.value} estrela(s). Obrigado!`;
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
